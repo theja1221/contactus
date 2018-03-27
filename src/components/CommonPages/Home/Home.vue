@@ -1,14 +1,15 @@
 <template>
-  <v-app>
+  <v-app style>
 
-      <v-container fluid >
-          <!-- image -->
-          <v-parallax
-          src="/static/doc-images/prof.jpg">
-          <v-layout row align-center justify-center>
-
-          </v-layout>
+     <v-parallax style="margin:0;padding:0;"
+          src="/static/doc-images/prof.jpg"
+          class="img">
+         
           </v-parallax>
+
+      <!-- <v-container style="padding:0;margin:0;" > -->
+          <!-- image -->
+         
 
           <hr class="divider1">
 
@@ -364,7 +365,7 @@
     </v-card>
   </v-footer>
  </v-layout>
-     </v-container>
+     <!-- </v-container> -->
 
 <hr class="divider1">
      
@@ -497,5 +498,11 @@ p{
 .divider1{
   margin-top: 50px;
   border-top: 3px double #8c8b8b;
+}
+
+.img{
+  width: 100%;
+  padding: 200px 200px 200px 200px;
+  background-size: 100% 100%;
 }
 </style>

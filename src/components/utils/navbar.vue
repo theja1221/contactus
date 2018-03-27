@@ -103,6 +103,7 @@ export default {
    position:sticky; 
    top: 1px;
    z-index: 999; 
+   background-color: transparent;
   
   
 }

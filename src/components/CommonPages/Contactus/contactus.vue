@@ -9,45 +9,83 @@
 	</div>
   <v-card>
 	<div class="row input-container">
+        <v-form class="contactusForm" v-model="validx" method="post" v-on:submit.prevent="getFormValues">
 			<div class="col-xs-12">
-
+                
 				<div class="styled-input wide">
-					<input type="text" required />
+					<input type="text"  v-model="name" required />
 					<label>Name</label> 
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
 				<div class="styled-input">
-					<input type="text" required />
+					<input type="text" required v-model="email" />
 					<label>Email</label> 
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
 				<div class="styled-input" style="float:right;">
-					<input type="text" required />
+					<input type="text" required  v-model="phonenumber"/>
 					<label>Phone Number</label> 
 				</div>
 			</div>
 			<div class="col-xs-12">
 				<div class="styled-input wide">
-					<textarea required></textarea>
+					<textarea required v-model="message"></textarea>
 					<label>Message</label>
 				</div>
 			</div>
 			<div class="col-xs-12">
-				<div class="btn-lrg submit-btn">Contact Us</div>
+				<v-btn large type="submit" @click="submit" :disabled="!valid">Contact Us</v-btn>
 			</div>
+        </v-form>
 	</div>
+    
   </v-card>
+  
 </div>
+
 
 
   </v-app>
 </template>
 
+
+
 <script>
+import axios from 'axios';
 export default {
-  
+    data(){
+        return{
+            name:'',
+            email:'',
+            phonenumber:'',
+            message:'',
+            validx:true
+
+        }
+    },
+  methods:{
+      submit(){
+      console.log('debug')
+      }
+  },
+  getFormValues(submitEvent){
+      axios.post('url',{
+          name: this.name,
+          email: this.email,
+          phone: this.phonenumber,
+          message: this.message
+      })
+      .then(response => {
+          console.log(response)
+      })
+
+      .catch (e => {
+
+      })
+  }
+
 }
 </script>
 
