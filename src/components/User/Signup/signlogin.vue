@@ -163,11 +163,6 @@ export default {
     email: function(value) {
       this.valid_email(value, 'email_msg');
     },
-    contact: function(){
-      if(this.check_contact_length(value, 'contact_msg', 10)) {
-        this.check_contact_match();
-      }
-    },
     password: function(value) {
       if(this.check_password_length(value, 'pwd_msg', 6)) {
         this.check_passwords_match();
@@ -185,43 +180,13 @@ export default {
         valid_email(email, msg) {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
             this[msg] = '';
-            disable_btn: true;
+            this.disable_btn = false;
             return true;
         } else {
             this[msg] = 'Keep typing untill the email is valid';
-            disable_btn: false;
+            this.disable_btn = true;
             return false;
           } 
-        },
-
-        check_contact_length(value, msg, total) {
-        var length = value.length;
-        var sum = 0;
-        var display;
-        
-        sum = (total - length);
-        
-        switch(sum) {
-            case 0:
-            display = '';
-            break;
-            case 1:
-            display = sum + ' more numbers to type';
-            break;
-            default:
-            display = sum + ' more numbers to type';
-        }
-        
-        if(length >= total) {
-            this[msg] = '';
-            disable_btn: false;
-            return true;
-        } else {
-            this[msg] = display;
-            disable_btn: true;
-            return false;
-        }
-        
         },
         
         check_password_length(value, msg, total) {
@@ -244,11 +209,11 @@ export default {
         
         if(length >= total) {
             this[msg] = '';
-            disable_btn: false;
+            this.disable_btn = false;
             return true;
         } else {
             this[msg] = display;
-            disable_btn: true;
+            this.disable_btn = true;
             return false;
         }
         
@@ -258,11 +223,11 @@ export default {
         if(this.password.length > 5 && this.confpassword.length > 5) {
             if(this.confpassword != this.password) {
                 this.confpwd_msg = 'Password Fields do not match';
-                disable_btn: true;
+                this.disable_btn = true;
                 return true;
             } else {
                 this.confpwd_msg = '';
-                disable_btn: false;
+                this.disable_btn = false;
                 return false;
             }
             }

@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="col-xs-12">
-				<v-btn class="btn-lrg submit"  @click="submit">Contact Us</v-btn>
+				<v-btn large  @click="submit" :disabled="!valid">Contact Us</v-btn>
 			</div>
         </v-form>
 	</div>
@@ -71,7 +71,7 @@ export default {
       }
   },
   getFormValues(submitEvent){
-      axios.post('url',{
+      axios.post('http://jsonplaceholder.typicode.com/posts',{
           name: this.name,
           email: this.email,
           phone: this.phonenumber,
@@ -84,6 +84,11 @@ export default {
       .catch (e => {
 
       })
+  },
+  computed:{
+      valid: function(){
+          return this.name !='' && this.email !='' && this.phonenumber !='' && this.message !=''
+      }
   }
 
 }
