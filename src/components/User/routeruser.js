@@ -1,6 +1,6 @@
 const profile = () => import ('./Profile/Profile.vue')
-const signup = () => import ('./Signup/signup.vue')
-
+const signup = () => import ('./Signup/signlogin.vue')
+const forgotpassword = () => ('./Signup/forgotpassword.vue')
 
 export default[
     {
@@ -12,5 +12,8 @@ export default[
         path:'/user/signup',
         name:'signup',
         component:signup
-    }
+
+    },
+    
+   
 ]

@@ -7,7 +7,7 @@
 	<div class="row">
 			<h4 style="text-align:center">Tell us more</h4>
 	</div>
-  <v-card>
+  <!-- <v-card> -->
 	<div class="row input-container">
         <v-form class="contactusForm" v-model="validx" method="post" v-on:submit.prevent="getFormValues">
 			<div class="col-xs-12">
@@ -36,12 +36,12 @@
 				</div>
 			</div>
 			<div class="col-xs-12">
-				<v-btn large type="submit" @click="submit" :disabled="!valid">Contact Us</v-btn>
+				<v-btn class="btn-lrg submit"  @click="submit">Contact Us</v-btn>
 			</div>
         </v-form>
 	</div>
     
-  </v-card>
+  <!-- </v-card> -->
   
 </div>
 

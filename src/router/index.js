@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '../components/CommonPages/Home/Home.vue'
 import User from '../components/User/routeruser'
 import CommonPages from '../components/CommonPages/routercommon'
+import forgotpassword from '../components/User/Signup/forgotpassword.vue'
 
 
 
@@ -30,6 +31,11 @@ export default new Router({
       name:'Home',
       component:Home,
       
+    },
+    {
+      path:'/forgot',
+      name:'forgotpassword',
+      component:forgotpassword
     },
     ...User,
     ...CommonPages,

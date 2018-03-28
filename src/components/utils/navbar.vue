@@ -80,7 +80,7 @@ export default {
         {icon:'face', title:'Features', link:'/features'},
         {icon:'note', title:'Pricing',link:'/pricing'},
         {icon:'contact_phone', title:'Contact Us',link:'/contactus'},
-        {icon:'face', title:'Sign Up',link:'/signup'},
+        {icon:'face', title:'Sign Up',link:'/user/signup'},
         // {icon:'lock_open', title:'Sign in',link:'/signin'}
 
 
@@ -103,7 +103,9 @@ export default {
    position:sticky; 
    top: 1px;
    z-index: 999; 
-   background-color: transparent;
+   background-color: #0001;
+   top:0;
+   /* opacity: 0.1; */
   
   
 }

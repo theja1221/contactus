@@ -1,13 +1,14 @@
 <template>
   <v-app style>
 
-     <v-parallax style="margin:0;padding:0;"
-          src="/static/doc-images/prof.jpg"
-          class="img">
-         
-          </v-parallax>
+      
+         <img src="/static/doc-images/prof.jpg"
+          class="img"
+          width="100%"
+          >
+ 
 
-      <!-- <v-container style="padding:0;margin:0;" > -->
+      <!-- <v-container> -->
           <!-- image -->
          
 
@@ -469,7 +470,7 @@ p{
   height: 50px;
   background-color: white;
   border-radius: 50%!important;
-  z-index: 999;
+    /* z-index: 999; */
 }
 /* .Why_us{
    padding:60px 0px 0px 550px;
@@ -500,9 +501,4 @@ p{
   border-top: 3px double #8c8b8b;
 }
 
-.img{
-  width: 100%;
-  padding: 200px 200px 200px 200px;
-  background-size: 100% 100%;
-}
 </style>

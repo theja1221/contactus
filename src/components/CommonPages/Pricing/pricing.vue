@@ -43,7 +43,7 @@
                     </v-list-tile>
                   </v-list>
                       <v-flex class="buyButton">
-                        <v-btn color="blue lighten-1">BUY NOW</v-btn>
+                        <router-link to="/user/signup"><v-btn color="blue lighten-1">BUY NOW</v-btn></router-link>
                       </v-flex>
                 </v-card>
               </v-flex>
@@ -72,7 +72,7 @@
                     </v-list-tile>  
                   </v-list>
                       <v-flex class="buyButton">
-                        <v-btn color="blue lighten-1">BUY NOW</v-btn>
+                        <router-link to="/user/signup"><v-btn color="blue lighten-1">BUY NOW</v-btn></router-link>
                       </v-flex>
                 </v-card>
               </v-flex>
@@ -101,7 +101,7 @@
                     </v-list-tile>  
                   </v-list>
                       <v-flex class="buyButton">
-                        <v-btn color="blue lighten-1">BUY NOW</v-btn>
+                        <router-link to="/user/signup"><v-btn color="blue lighten-1">BUY NOW</v-btn></router-link>
                       </v-flex>
                 </v-card>
               </v-flex>
