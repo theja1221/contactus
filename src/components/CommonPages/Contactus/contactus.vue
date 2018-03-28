@@ -9,7 +9,7 @@
 	</div>
   <!-- <v-card> -->
 	<div class="row input-container">
-        <v-form class="contactusForm" v-model="validx" method="post" v-on:submit.prevent="getFormValues">
+        <!-- <v-form class="contactusForm" v-model="validx" method="post" v-on:submit.prevent="getFormValues"> -->
 			<div class="col-xs-12">
                 
 				<div class="styled-input wide">
@@ -38,7 +38,7 @@
 			<div class="col-xs-12">
 				<v-btn large  @click="submit" :disabled="!valid">Contact Us</v-btn>
 			</div>
-        </v-form>
+        <!-- </v-form> -->
 	</div>
     
   <!-- </v-card> -->
@@ -54,6 +54,7 @@
 
 <script>
 import axios from 'axios';
+
 export default {
     data(){
         return{
@@ -65,26 +66,29 @@ export default {
 
         }
     },
+
   methods:{
+
       submit(){
       console.log('debug')
-      }
-  },
-  getFormValues(submitEvent){
-      axios.post('http://jsonplaceholder.typicode.com/posts',{
-          name: this.name,
-          email: this.email,
-          phone: this.phonenumber,
-          message: this.message
-      })
-      .then(response => {
-          console.log(response)
-      })
+      },
 
-      .catch (e => {
+        submit(){
+            axios.post(`http://jsonplaceholder.typicode.com/posts`,{
+                name: this.name,
+                email: this.email,
+                phone: this.phonenumber,
+                message: this.message
+            })
+            .then(response => {
+                console.log(response)
+            })
+            .catch (e => {
 
-      })
+            })
+        },
   },
+
   computed:{
       valid: function(){
           return this.name !='' && this.email !='' && this.phonenumber !='' && this.message !=''
