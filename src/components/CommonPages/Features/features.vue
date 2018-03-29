@@ -13,24 +13,21 @@
 
   <v-layout row wrap>
 
-              <v-flex xs12 sm6 pr-3 pt-4>
+               <div id="app">
+      <div class="div">
+      <div class="outer">
+        
+        <div class="inner">
+           <div class="image-div">
+            <img  class="image" :src="image" >
+          </div> 
+        </div>
+      </div>
+        </div>
+   
+    
+  </div>
 
-                <v-card 
-                hover raised ripple
-                color="blue lighten-3">
-
-                  <v-card-media>
-                    <i class="fab fa-android fa-3x"></i>
-                  </v-card-media>
-
-                  <v-card-title>
-                    <h1>Lorem Ipsum</h1>
-                    <v-card-text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quisquam facere inventore quod, sed ipsa ut. Aliquam debitis, dolores natus sint at, hic quos vero distinctio reprehenderit labore, amet omnis.</v-card-text>
-                  </v-card-title>
-
-                </v-card>
-              </v-flex>
-             
              <!-- 2 -->
              
             
@@ -175,32 +172,53 @@ export default {
 
 /* main cards */
 /*Basic Styling of Card*/
-.card{
-  border: white solid 2px;
-  padding-right: 55px;
-  /* border-radius: 12px; */
-  max-width: 100%;
+body{
+  background-color:#F0F0F0;
 }
-/*Styling the card media*/
-.card__media{
-  /*border: black solid 1px; */
-  margin-top: 10px;
-  margin-left: 55%;
+.div{
+  position:relative;
+  height:240px;
+  width:240px;
+  background-color:transparent;
+  margin:auto; /*remove this particular styling if necessary */
+  margin-top:10px; /*remove this particular styling if necessary */
 }
-/*Styling the card title*/
-.card__title{
-/*   border: black solid 1px; */
-  text-align:center;
-  padding-left: 150px;
+.outer{
+  height:240px;
+  width:240px;
+  background-color: #F8F8F8;
+  border:none;
+  color:red;
+  border-radius:120px;
+  position:absolute;
 }
-.card__title h1{
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 20px;
-  margin-left: 34%;
+.inner{
+  height:165px;
+  width:165px;
+  border-radius:120px;
+  background-color:white;
+  position:absolute;
+  top:38.5px;
+  left:38.5px;
+  display:block;
+  box-shadow:1px 1px 50px rgba(0,0,0,0.1);
 }
-.card__title .card__text{
-  font-family: 'Gorditas', cursive;
-  font-size: 14px;
+.image-div{
+  height:78px;
+  width:78px;
+  background-color:white;
+  position:absolute;
+  top:42px;
+  left:42px;
+
+}
+.image{
+  width:100%;
+  height:100%;
+  display:block;
+}
+.inner:hover{
+  box-shadow:1px 1px 50px rgba(0,0,0,0.2);
 }
 
 /* picture cards */
