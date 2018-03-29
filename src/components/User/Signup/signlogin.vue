@@ -120,6 +120,9 @@
                       <v-flex mb-3>
                         <v-btn class="button" :class="{active: disable_btn}" :disabled="disable_btn" @click.prevent="submitLogin" top outline type="submit" large style="border-radius: 4px">SUBMIT</v-btn>
                       </v-flex>
+                  <v-btn v-on:click="buttonClick">TRY</v-btn>
+                                    <v-btn v-on:click="buttonClicky">TRY</v-btn>
+
                     </v-layout>
                   </v-container>
                 </v-form>
@@ -136,6 +139,7 @@
 
 import axios from 'axios'
 import forgotpassword from './forgotpassword'
+import auth from './../../../auth/authorisation.js'
 
 export default {
     components:{
@@ -143,18 +147,19 @@ export default {
     },
 
     data: () => ({  
+      localStoraze:'',
       details: ['SIGN-UP', 'LOGIN'],
       active: null,
       disable_btn: true,
       msg1: true,
       msg2: true,
       msg3: true,
-      email: '',
       email_msg: '',
-      contact: '',
       contact_msg: '',
+       pwd_msg: '',
+      email: '',
+      contact: '',
       password: '',
-      pwd_msg: '',
       confpassword: '',
       confpwd_msg: '',
     }),
@@ -183,7 +188,7 @@ export default {
             this.disable_btn = false;
             return true;
         } else {
-            this[msg] = 'Keep typing untill the email is valid';
+            this[msg] = 'Please enter valid email';
             this.disable_btn = true;
             return false;
           } 
@@ -233,7 +238,21 @@ export default {
             }
         },
 
+        
+        
+        buttonClick(){
+          window.localStorage.setItem("key","hello from")
+
+
+        },
+
+        buttonClicky(){
+          this.localStoraze=window.localStorage.getItem("key")
+          console.log(this.localStoraze)
+        },
+
         submitSignUp () {
+
             axios.post(`http://jsonplaceholder.typicode.com/posts`, {
                 email: this.email,
                 contact: this.contact,
@@ -241,6 +260,14 @@ export default {
             })
             .then(response => {
             console.log(response)
+            // window.localStorage.setItem("tokenName",response.token)
+            // console.log(window.localStorage.getItem("tokenName"))
+            /*
+
+            localstorage.setitem('user')
+
+
+            */
             })
             .catch(e => {
             })
@@ -259,31 +286,40 @@ export default {
         },
 
         submitLogin () {
-            axios.post(`http://jsonplaceholder.typicode.com/posts`, {
-                email: this.email,
-                password: this.password
-            })
-            .then(response => {
-            console.log(response)
-            })
-            .catch(e => {
-                // 
-            })
-            disable_btn: true;
-            msg1: true;
-            msg2: true;
-            msg3: true;
-            email: '';
-            email_msg: '';
-            contact: '';
-            contact_msg: '';
-            password: '';
-            pwd_msg: '';
-            confpassword: '';
-            confpwd_msg: '';
-        }
-    } 
-}
+
+          localStorage.setItem('jwt',JSON.stringify({"email":this.email}))
+          this.$router.push("/user/profile")
+
+
+
+
+
+//             axios.post(`http://jsonplaceholder.typicode.com/posts`, {
+//                 email: this.email,
+//                 password: this.password
+//             })
+//             .then(response => {
+//             console.log(response)
+//             })
+//             .catch(e => {
+//                 // 
+//             })
+//             disable_btn: true;
+//             msg1: true;
+//             msg2: true;
+//             msg3: true;
+//             email: '';
+//             password: '';
+//             contact: '';
+//             email_msg: '';
+//             contact_msg: '';
+//             pwd_msg: '';
+//             confpassword: '';
+//             confpwd_msg: '';
+         }
+    }
+    }
+        
 </script>
 
 <style scoped>

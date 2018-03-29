@@ -37,7 +37,6 @@
 					  <v-flex xs12 sm4 md4>
             <v-switch
               label="Hide"
-              v-model="ex11"
               color="blue"
               value="red"
               hide-details
@@ -118,8 +117,9 @@
 
 <script>
 import axios from 'axios';
+
 export default {
-	data() {
+	data(){
 		return {
 			firstname: '',
 			lastname: '',
@@ -132,9 +132,6 @@ export default {
 			validx:true,
 			includeFiles: true,
 			enabled: false
-		},
-		{
-			ex11 :['blue']
 		}
 	},
 
@@ -171,8 +168,6 @@ export default {
 			
 		}
 	}
-	
-  
 }
 </script>
 
