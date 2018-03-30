@@ -120,8 +120,8 @@
                       <v-flex mb-3>
                         <v-btn class="button" :class="{active: disable_btn}" :disabled="disable_btn" @click.prevent="submitLogin" top outline type="submit" large style="border-radius: 4px">SUBMIT</v-btn>
                       </v-flex>
-                  <v-btn v-on:click="buttonClick">TRY</v-btn>
-                                    <v-btn v-on:click="buttonClicky">TRY</v-btn>
+                  <!-- <v-btn v-on:click="buttonClick">TRY</v-btn> -->
+                                    <!-- <v-btn v-on:click="buttonClicky">TRY</v-btn> -->
 
                     </v-layout>
                   </v-container>
@@ -240,16 +240,12 @@ export default {
 
         
         
-        buttonClick(){
-          window.localStorage.setItem("key","hello from")
+      
 
-
-        },
-
-        buttonClicky(){
-          this.localStoraze=window.localStorage.getItem("key")
-          console.log(this.localStoraze)
-        },
+        // buttonClicky(){
+        //   this.localStoraze=window.localStorage.getItem("key")
+        //   console.log(this.localStoraze)
+        // },
 
         submitSignUp () {
 
@@ -289,7 +285,7 @@ export default {
 
           localStorage.setItem('jwt',JSON.stringify({"email":this.email}))
           this.$router.push("/user/profile")
-
+``
 
 
 

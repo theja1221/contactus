@@ -43,7 +43,7 @@
                     </v-list-tile>
                   </v-list>
                       <v-flex class="buyButton">
-                        <router-link to="/user/signup"><v-btn color="blue lighten-1">BUY NOW</v-btn></router-link>
+                        <router-link to="/user/checkout"><v-btn  v-on:click="updatePackage" color="blue lighten-1">BUY NOW</v-btn></router-link>
                       </v-flex>
                 </v-card>
               </v-flex>
@@ -156,7 +156,14 @@
       {feature: 'Ninth Feature'},
       {feature: 'Tenth Feature'}
     ],
-  })
+  }),
+  methods:{
+    updatePackage(){
+      let packName='primary';
+      // this.$store.states.name = packName;
+      this.$store.commit('setName',packName)
+    }
+  }
   }
 </script>
 
