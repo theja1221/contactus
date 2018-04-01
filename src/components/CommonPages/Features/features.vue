@@ -11,111 +11,133 @@
   
 
 
-  <v-layout row wrap>
+             <v-layout row wrap pt-4>
+        <v-flex xs12 text-xs-center>
+            <h1>
+             {{heading_for_whyus}} 
+            </h1>
+        </v-flex>
+      </v-layout>           
+      <v-layout row wrap>
 
-               <div id="app">
-      <div class="div">
-      <div class="outer">
-        
-        <div class="inner">
-           <div class="image-div">
-            <img  class="image" :src="image" >
-          </div> 
-        </div>
-      </div>
-        </div>
-   
-    
-  </div>
+        <v-flex xs12 lg4 mt-4>
+           <div class="div">
+              <div class="outer">
+                 <div class="inner">
+                    <div class="image-div">
+                       <img  class="image" :src="image" alt="">
+                    </div> 
+                 </div>
+              </div>
+            </div>
+            <div  mt-2>
+                <h2 class="text-xs-center">{{whyus1}}</h2>
+            </div>
+            <div>
+                <p class="text-xs-center p-whyustag">{{whyustag1}}</p>
+            </div>
+        </v-flex>
+        <v-flex xs12 lg4 mt-4>
+            <div class="div">
+              <div class="outer">
+                 <div class="inner">
+                    <div class="image-div">
+                       <img  class="image" :src="image" alt="">
+                    </div> 
+                 </div>
+              </div>
+            </div>
+            <div>
+                <h2 class="text-xs-center">{{whyus2}}</h2>
+            </div>
+            <div>
+                <p class="text-xs-center p-whyustag">{{whyustag2}}</p>
+            </div>
+        </v-flex>
+        <v-flex xs12 lg4 mt-4>
+            <div class="div">
+              <div class="outer">
+                 <div class="inner">
+                    <div class="image-div">
+                       <img  class="image" :src="image" alt="">
+                    </div> 
+                 </div>
+              </div>
+            </div>
+            <div>
+                <h2 class="text-xs-center">{{whyus3}}</h2>
+            </div>
+            <div>
+                <p class="text-xs-center p-whyustag">{{whyustag3}}</p>
+            </div>
+        </v-flex>
+     </v-layout>
 
-             <!-- 2 -->
-             
-            
 
-              <v-flex xs12 sm6 pr-3 mt-4>
 
-                <v-card 
-                hover raised ripple
-                color="indigo lighten-2">
+               <v-layout row wrap pt-4>
+        <v-flex xs12 text-xs-center>
+            <h1>
+             {{heading_for_whyus}} 
+            </h1>
+        </v-flex>
+      </v-layout>           
+      <v-layout row wrap>
 
-                  <v-card-media>
-                    <i class="fab fa-apple fa-3x"></i>
-                  </v-card-media>
+        <v-flex xs12 lg4 mt-4>
+           <div class="div">
+              <div class="outer">
+                 <div class="inner">
+                    <div class="image-div">
+                       <img  class="image" :src="image" alt="">
+                    </div> 
+                 </div>
+              </div>
+            </div>
+            <div  mt-2>
+                <h2 class="text-xs-center">{{whyus1}}</h2>
+            </div>
+            <div>
+                <p class="text-xs-center p-whyustag">{{whyustag1}}</p>
+            </div>
+        </v-flex>
+        <v-flex xs12 lg4 mt-4>
+            <div class="div">
+              <div class="outer">
+                 <div class="inner">
+                    <div class="image-div">
+                       <img  class="image" :src="image" alt="">
+                    </div> 
+                 </div>
+              </div>
+            </div>
+            <div>
+                <h2 class="text-xs-center">{{whyus2}}</h2>
+            </div>
+            <div>
+                <p class="text-xs-center p-whyustag">{{whyustag2}}</p>
+            </div>
+        </v-flex>
+        <v-flex xs12 lg4 mt-4>
+            <div class="div">
+              <div class="outer">
+                 <div class="inner">
+                    <div class="image-div">
+                       <img  class="image" :src="image" alt="">
+                    </div> 
+                 </div>
+              </div>
+            </div>
+            <div>
+                <h2 class="text-xs-center">{{whyus3}}</h2>
+            </div>
+            <div>
+                <p class="text-xs-center p-whyustag">{{whyustag3}}</p>
+            </div>
+        </v-flex>
+     </v-layout>
 
-                  <v-card-title>
-                    <h1>Lorem Ipsum</h1>
-                    <v-card-text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quisquam facere inventore quod, sed ipsa ut. Aliquam debitis, dolores natus sint at, hic quos vero distinctio reprehenderit labore, amet omnis.</v-card-text>
-                  </v-card-title>
 
-                </v-card>
-              </v-flex>
-            
-           
-           <!-- 3 -->
-
-            <v-flex xs12 sm6 pr-3 mt-4>
-
-                <v-card 
-                hover raised ripple
-                color="deep-purple lighten-3">
-
-                  <v-card-media>
-                    <i class="fab fa-android fa-3x"></i>
-                  </v-card-media>
-
-                  <v-card-title>
-                    <h1>Lorem Ipsum</h1>
-                    <v-card-text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quisquam facere inventore quod, sed ipsa ut. Aliquam debitis, dolores natus sint at, hic quos vero distinctio reprehenderit labore, amet omnis.</v-card-text>
-                  </v-card-title>
-
-                </v-card>
-              </v-flex>
-
-              <!-- 4 -->
-
-              <v-flex xs12 sm6 pr-3 mt-4>
-
-                <v-card 
-                hover raised ripple
-                color="teal lighten-3">
-
-                  <v-card-media>
-                    <i class="fab fa-android fa-3x"></i>
-                  </v-card-media>
-
-                  <v-card-title>
-                    <h1>Lorem Ipsum</h1>
-                    <v-card-text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quisquam facere inventore quod, sed ipsa ut. Aliquam debitis, dolores natus sint at, hic quos vero distinctio reprehenderit labore, amet omnis.</v-card-text>
-                  </v-card-title>
-
-                </v-card>
-              </v-flex>
-
-            <!-- features card -->
-            <v-flex xs-12 pt-4>
-        <v-card 
-        ripple hover raised height="300px"
-        color="blue-grey lighten-3">
-<!--           <v-container fluid grid-list-lg> -->
-            <v-layout row>
-              <!--Media in this flex-->
-              <v-flex xs5>
-                <v-card-media
-                 contain
-                 height="300px"
-                 img src='https://images.unsplash.com/photo-1519475180017-2880844644bc?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=0beaf64e277c1f36c8f41aad27d16c73' alt=''>
-                </v-card-media>
-              </v-flex>
-              <!--Text and title in this flex-->
-              <v-flex xs7>
-                <v-card-title>Lorem Ipsum</v-card-title>
-                <v-card-text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum numquam labore itaque sint vitae corrupti quibusdam veritatis neque sequi dolorum adipisci excepturi inventore maxime veniam, provident omnis dicta, assumenda beatae.</v-card-text>
-              </v-flex>
-            </v-layout>
-<!--           </v-container> -->
-        </v-card>
-      </v-flex>
-      </v-layout>
 
       <!-- footer -->
       <v-layout pt-4>
@@ -158,8 +180,16 @@
 <script>
 export default {
   data: () => ({
-      icons: ['fab fa-facebook', 'fab fa-twitter', 'fab fa-google-plus', 'fab fa-linkedin', 'fab fa-instagram']
-    }),
+      icons: ['fab fa-facebook', 'fab fa-twitter', 'fab fa-google-plus', 'fab fa-linkedin', 'fab fa-instagram'],
+      image:'https://s3.eu-west-1.amazonaws.com/images.assets-landingi.com/MUE2gcKh9Y6Mamy4/growing-plant.png',
+      // heading_for_whyus:'What w',
+      whyus1:'Reliable',
+      whyustag1:'Interoperable ',
+      whyus2:'Fast',
+      whyustag2:'Scalable',
+      whyus3:'Seamless',
+      whyustag3:'Speed',
+    })
       // beforeRouteLeave (to, from , next) {
       //   const answer = window.confirm('Do you really want to leave? you have unsaved changes!')
       //   if (answer) next(); else next(false);

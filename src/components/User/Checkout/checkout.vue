@@ -3,13 +3,16 @@
     <v-container id="container" text-xs-center wrap>
         <v-layout row wrap id="parentLayout">
           <!-- The left side that will contain package related information -->
-            <v-flex lg3 offset-lg3 md3 offset-md3 sm3 offset-sm3 xs12 id="left">
-                <v-card flat>
-                  <v-card-media>
-                    <i class="fab fa-apple fa-7x"></i>
-                  </v-card-media>
+            <v-flex lg3 offset-lg3 md3 offset-md3 sm3 offset-sm3 xs12 id="left" elevation-5>
+                <v-card>
+                  <v-flex id="cardImage">
+                    <v-card-media>
+                      <i class="fab fa-apple fa-2x"></i>
+                    </v-card-media>
+                  </v-flex>
+                  
                   <v-card-title id="leftTitle">
-                    {{ name }}
+                    {{name}}
                   </v-card-title>
                   <v-list>
                     <v-list-tile v-for="item in items" :key="item.index">
@@ -26,31 +29,29 @@
                 </v-card>            
               </v-flex>
               <!-- The Right Side will contain regarding InstaMojo and the 2 pre-filled info , checkbox and button -->
-              <v-flex lg6 md6 sm6 xs12 id="right">
+              <v-flex lg6 md6 sm6 xs12 id="right" elevation-5>
                 <v-layout row wrap>
                   <v-flex lg12 md12 sm12 xs12>
                     <v-card id="rightCard1" flat>
                       <v-card-title id="rightTitle">
                         Instructions
                       </v-card-title>
-                      <v-card-text id="rightInstructText">
-                        <ul v-for="instruct in instructions" v-bind:key="instruct.index">
-                          <li>{{ instruct.ins }}</li><br>
-                        </ul> 
+                      <v-card-text id="rightInstructText" v-for="instruct in instructions" v-bind:key="instruct.index">
+                        <i class="fas fa-caret-right fa-1x"></i>{{ instruct.ins }}
                       </v-card-text>
                     </v-card>
                   </v-flex>
                 </v-layout>
 
                 <v-layout row wrap>
-                  <v-flex sm8 offset-sm2 id="rightCard2" mt-1>
-                    <v-card flat>
+                  <v-flex sm8 offset-sm2 id="rightCard2" mt-3>
+                    <v-card>
                       <v-card-text id="rightUserCredentials">
                         <p class="text-xs-center">myemail@somemail.com</p>
-                        <p class="text-xs-center">myName Surname</p>
+                        <span class="text-xs-center">myName Surname</span>
                     </v-card-text>
-                      <v-flex id="rightCheck" mb-2>
-                        <v-btn class="button"   grey lighten-2 depressed type="submit" @click="submit" large>PROCEED</v-btn>
+                      <v-flex id="rightCheck" pt-3>
+                        <v-btn bottom mt-5 class="button" depressed type="submit" @click="submit">PROCEED</v-btn>
                       </v-flex>    
                     </v-card>  
                   </v-flex>
@@ -61,7 +62,6 @@
       </v-container>
   </div>
 </template>
-
 <script>
 
 import axios from 'axios';
@@ -120,11 +120,17 @@ export default {
 #left{
   border: lightgray solid 1px; 
 }
+#cardImage{
+  background-color: #f0f0f0;
+}
 .card__media{
   display: inline-flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f0f0f0;
 }
 #leftTitle{
-  font-size: 34px;
+  font-size: 20px;
   border-top: lightgray solid 1px;
   border-bottom: lightgray solid 1px; 
   justify-content: center;
@@ -132,6 +138,8 @@ export default {
 .list{
   border-bottom: solid lightgray 1px;
   padding-bottom: 0px;
+  padding-top: 16px;
+  background-color: #f0f0f0;
 }
 .list__tile__content{
   display: flex;
@@ -140,31 +148,45 @@ export default {
 }
 .list__tile__action-text{
   color: black;
-  font-size: 16px;
+  font-size: 14px;
 }
 #leftPrice{
-  font-size: 34px;
+  font-size: 23px;
   justify-content: center;
 }
 #right{
   border: lightgrey solid 1px;
+  background-color: #f0f0f0;
 }
 #rightTitle{
-  font-size: 30px;
+  font-size: 26px;
+  color: white;
   justify-content: center;
-  background-color: #E0E0E0;
+  background-color: #48AAE6;
 }
 #rightInstructText{
+  padding-bottom: 8px;
+  color: black;
+  padding-top: 8px;
   font-size: 14px;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 4%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 #rightCard2{
   border: solid lightgray 1px;
+  background-color: white;
+  border: solid deepskyblue 1px;
+  border-radius: 8px;
 }
 .button{
   border-radius: 6px;
+  border: deepskyblue solid 2px;
+  color: deepskyblue;
+}
+.button:hover{
+  border-radius: 6px;
+  background-color: deepskyblue;
+  color: white;
 }
 @media only screen and (max-width: 600px) {
     /* For mobile phones: */
