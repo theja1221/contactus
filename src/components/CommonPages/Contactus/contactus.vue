@@ -150,7 +150,7 @@
       <v-layout row wrap>
             <v-flex xs9 mx-auto text-xs-center>
                         <v-layout row wrap>
-                               footer
+                               footey
                         </v-layout>
             </v-flex>
       </v-layout>
