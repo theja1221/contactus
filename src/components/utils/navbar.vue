@@ -2,7 +2,7 @@
 <v-app >
 
     <v-toolbar 
-   class="tool_bar"
+   class="tool_bar" 
    flat
    color="blue-grey lighten-5">
     <v-toolbar-side-icon  
@@ -40,7 +40,7 @@
       
        </v-toolbar-items>
        </v-toolbar>
-       <v-container fluid>  
+       <!-- <v-container fluid>   -->
       <v-layout row wrap>
         
     
@@ -71,7 +71,7 @@
    
       </v-layout>
       
-      </v-container>  
+      <!-- </v-container>   -->
 
     
 
